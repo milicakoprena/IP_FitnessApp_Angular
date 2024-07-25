@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="column">
+    <mat-card class="tracker-card">
+      <mat-card-content>
+        <div class="tracker" *ngFor="let item of pagedTrackers">
+          <div class="tracker-item">
+            <h2>
+              Fitness tracker on day: {{ item.date | date : "dd/MM/yyyy" }}
+            </h2>
+            <h3>Exercise type: {{ item.exerciseType }}</h3>
+            <h3>Intensity: {{ item.intensity }}</h3>
+            <h3>Duration: {{ item.duration }} min</h3>
+            <h3>Weight: {{ item.weight }} kg</h3>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-paginator
+      [length]="length"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="pageSizeOptions"
+      (page)="onPageChange($event)"
+    >
+    </mat-paginator>
+    <button
+      mat-button
+      (click)="openDialog()"
+      class="add-button"
+      [disabled]="!todayBlank"
+    >
+      Add entry
+    </button>
+  </div>
+
+  <div class="column">
+    <mat-card class="tracker-card">
+      <mat-card-header
+        ><mat-card-title>Weight statistics</mat-card-title></mat-card-header
+      >
+      <mat-card-content>
+        <div class="chart-div">
+          <canvas
+            baseChart
+            [data]="lineChartData"
+            [options]="lineChartOptions"
+            [type]="'line'"
+            height="307px"
+            width="450px"
+          >
+          </canvas>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<button
+  mat-button
+  (click)="generatePdf()"
+  class="add-button pdf-button"
+  style="width: 30%; float: right"
+>
+  Save as PDF
+</button>

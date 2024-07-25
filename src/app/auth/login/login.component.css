@@ -1,0 +1,86 @@
+.login-card {
+  width: 100%;
+  background-color: #e4e4e4;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.login-sub-container img {
+  width: 220px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.login-sub-container h2 {
+  color: #715e89;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.login-sub-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.login-form mat-form-field {
+  width: 400px;
+  margin-top: 10px;
+}
+
+.login-form .login-button {
+  font-size: 16px;
+  background-color: #bfbfbf;
+}
+
+.login-form button {
+  color: #4a4a4a;
+  margin-top: 10px;
+}
+
+mat-icon {
+  color: #4a4a4a;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    height: fit-content;
+    gap: 0px;
+  }
+
+  .login-card {
+    padding: 0px;
+  }
+
+  .login-sub-container img {
+    width: 150px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .login-form mat-form-field {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .login-form .login-button {
+    width: 100%;
+    max-width: 400px;
+  }
+}

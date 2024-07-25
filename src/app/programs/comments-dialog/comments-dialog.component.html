@@ -1,0 +1,37 @@
+<div class="comments-dialog">
+  <mat-dialog-content>
+    <div class="form-div">
+      <form class="comment-form" [formGroup]="form" (ngSubmit)="submitForm()">
+        <mat-form-field appearance="fill">
+          <mat-label>Write a comment</mat-label>
+          <textarea
+            matInput
+            formControlName="content"
+            required
+            rows="3"
+          ></textarea>
+        </mat-form-field>
+        <button mat-button class="comment-button" type="submit">Post</button>
+      </form>
+    </div>
+    <div class="comments-card">
+      <mat-card>
+        <mat-card-content>
+          <div class="comment" *ngFor="let comment of comments">
+            <div class="comment-item">
+              <div class="user-div">
+                <mat-icon>account_circle</mat-icon>
+                <h3>{{ comment.username }}</h3>
+              </div>
+
+              <p class="content">{{ comment.content }}</p>
+              <p align="end">
+                {{ comment.dateTime | date : "dd/MM/yyyy HH:mm:ss" }}
+              </p>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-dialog-content>
+</div>

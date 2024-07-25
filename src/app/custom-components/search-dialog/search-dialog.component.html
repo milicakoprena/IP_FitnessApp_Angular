@@ -1,0 +1,65 @@
+<mat-dialog-content>
+  <form [formGroup]="form" class="search-form">
+    <mat-form-field appearance="fill">
+      <mat-label>Enter title</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="title"
+        autocomplete="off"
+        placeholder=""
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter description</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="description"
+        autocomplete="off"
+        placeholder=""
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter price</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="price"
+        autocomplete="off"
+        placeholder=""
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter duration</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="duration"
+        autocomplete="off"
+        placeholder=""
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter creators name</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="creator"
+        autocomplete="off"
+        placeholder=""
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter instructors name</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="instructorName"
+        autocomplete="off"
+        placeholder=""
+      />
+    </mat-form-field>
+    <button mat-button (click)="search()" class="search-button">Search</button>
+  </form>
+</mat-dialog-content>

@@ -1,0 +1,59 @@
+<div class="buttons">
+  <button mat-button (click)="showSearchDialog()">
+    <mat-icon>search</mat-icon>
+    SEARCH
+  </button>
+  <button mat-button (click)="showFilterDialog()">
+    <mat-icon>filter_alt</mat-icon>
+    FILTER
+  </button>
+  <button mat-button (click)="resetPrograms()">
+    <mat-icon>restart_alt</mat-icon>
+    RESET
+  </button>
+</div>
+
+<app-custom-card>
+  <mat-card-header>
+    <mat-card-title>{{ listTitle }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="programs-grid">
+      <div
+        class="program"
+        *ngFor="let item of pagedPrograms"
+        (click)="openProgramDetails(item)"
+      >
+        <div
+          class="program-item"
+          [ngStyle]="{ opacity: item.completed ? 0.5 : 1 }"
+        >
+          <div class="program-image column">
+            <img
+              *ngIf="item.images && item.images.length > 0"
+              [src]="item.images[0]"
+            />
+            <img
+              *ngIf="!item.images || item.images.length === 0"
+              src="../../../assets/workout_placeholder.jpg"
+            />
+          </div>
+          <div class="column">
+            <h3>Title: {{ item.title }}</h3>
+            <p>Level: {{ item.difficultyLevel }}</p>
+            <p>Location: {{ item.location }}</p>
+            <p>Price: {{ item.price }} BAM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+
+  <mat-paginator
+    [length]="length"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="onPageChange($event)"
+  >
+  </mat-paginator>
+</app-custom-card>

@@ -1,0 +1,12 @@
+<div class="update-container">
+  <app-user-input (formSubmitted)="updateUser($event)" [update]="update">
+    <button
+      mat-button
+      class="update-button"
+      [disabled]="!form || !form.valid"
+      type="submit"
+    >
+      Update
+    </button>
+  </app-user-input>
+</div>

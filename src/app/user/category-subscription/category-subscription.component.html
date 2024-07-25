@@ -1,0 +1,18 @@
+<app-custom-card>
+  <div class="list-div">
+    <h3>
+      Manage your category subscriptions here. You will receive notifications
+      about the selected categories on your email.
+    </h3>
+    <mat-selection-list (selectionChange)="onSelectionChange($event)">
+      <mat-list-option
+        *ngFor="let category of categories"
+        [value]="category.id"
+        [selected]="category.selected"
+      >
+        {{ category.name }}
+      </mat-list-option>
+    </mat-selection-list>
+    <button mat-button (click)="saveChanges()">Save Changes</button>
+  </div>
+</app-custom-card>

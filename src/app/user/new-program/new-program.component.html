@@ -1,0 +1,149 @@
+<mat-card class="program-card">
+  <div class="program-container">
+    <form class="program-form" [formGroup]="form">
+      <div class="form-inputs">
+        <div class="column">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter title</mat-label>
+            <input
+              matInput
+              type="text"
+              formControlName="title"
+              required
+              autocomplete="off"
+              placeholder=""
+            />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter description</mat-label>
+            <textarea
+              matInput
+              formControlName="description"
+              required
+              rows="5"
+            ></textarea>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-icon matPrefix>credit_card</mat-icon>
+            <mat-label>Enter price</mat-label>
+            <input
+              matInput
+              type="number"
+              formControlName="price"
+              required
+              autocomplete="off"
+              placeholder=""
+              min="20"
+              max="300"
+            />
+          </mat-form-field>
+        </div>
+        <div class="column">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter duration</mat-label>
+            <input
+              matInput
+              type="number"
+              formControlName="duration"
+              required
+              autocomplete="off"
+              placeholder=""
+              min="7"
+              max="100"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter instructors name</mat-label>
+            <mat-icon matPrefix>account_circle</mat-icon>
+            <input
+              matInput
+              type="text"
+              formControlName="instructorName"
+              required
+              autocomplete="off"
+              placeholder=""
+            />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter instructors contact</mat-label>
+            <mat-icon matPrefix>mail</mat-icon>
+            <input
+              matInput
+              formControlName="instructorContact"
+              required
+              autocomplete="off"
+              placeholder=""
+              type="text"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter category</mat-label>
+            <mat-select
+              formControlName="category"
+              [(value)]="selectedCategory"
+              (selectionChange)="openDialog()"
+            >
+              <mat-option
+                *ngFor="let category of categories"
+                [value]="category.id"
+                >{{ category.name }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="column">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter difficulty level</mat-label>
+            <mat-select formControlName="difficultyLevel">
+              <mat-option value="BEGINNER">Beginner</mat-option>
+              <mat-option value="INTERMEDIATE">Intermediate</mat-option>
+              <mat-option value="ADVANCED">Advanced</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter location</mat-label>
+            <mat-select formControlName="location">
+              <mat-option value="ONLINE">Online</mat-option>
+              <mat-option value="GYM">Gym</mat-option>
+              <mat-option value="PARK">Park</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div>
+            <input
+              class="images-input"
+              type="file"
+              accept="image/*"
+              formControlName="selectedImages"
+              (change)="onFileSelected($event)"
+              multiple
+            />
+          </div>
+          <mat-form-field
+            appearance="fill"
+            #videoUrlField
+            *ngIf="form.get('location')?.value === 'ONLINE'"
+          >
+            <mat-label>Enter video URL</mat-label>
+            <mat-icon matPrefix>play_circle</mat-icon>
+            <input
+              matInput
+              formControlName="videoUrl"
+              required
+              autocomplete="off"
+              placeholder=""
+              type="text"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <button
+        mat-button
+        [disabled]="form.invalid"
+        class="program-button"
+        (click)="addNewProgram()"
+      >
+        Add new program
+      </button>
+    </form>
+  </div>
+</mat-card>

@@ -1,0 +1,77 @@
+.comments-dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #e4e4e4;
+}
+
+.mat-mdc-dialog-content {
+  max-height: 600px;
+  height: fit-content;
+}
+
+.comments-card {
+  flex-grow: 1;
+  overflow-y: auto;
+  width: 100%;
+}
+
+mat-card {
+  max-height: 300px;
+  height: fit-content;
+  overflow: hidden;
+}
+
+mat-card-content {
+  height: 100%;
+  overflow-y: auto;
+  background-color: #f5f5f5;
+}
+
+.form-div {
+  margin-bottom: 10px;
+}
+
+.form-div button {
+  float: right;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  background-color: #efefef;
+}
+
+.form-div textarea {
+  resize: none;
+}
+
+.form-div mat-form-field {
+  width: 100%;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #efefef;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0px 10px 15px 10px;
+  word-wrap: break-word;
+}
+
+.user-div {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  border-radius: 5px;
+  background-color: #ad97c0cf;
+  align-items: center;
+  padding: 5px;
+}
+
+.user-div h3 {
+  margin-bottom: 0px;
+}
+
+.comment .content {
+  margin-top: 10px;
+}

@@ -1,0 +1,75 @@
+::ng-deep .info-card {
+  margin-top: 2.5em;
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1em;
+}
+
+mat-card-content {
+  margin-top: 1em;
+}
+
+.fact-item {
+  background-color: #efefef;
+  padding: 1em;
+  border-radius: 10px;
+  margin: 0 0.5em 1em 0.5em;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fact-item p {
+  text-wrap: wrap;
+  text-align: justify;
+  height: 50%;
+  overflow-y: auto;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.fact-item a {
+  align-self: flex-end;
+}
+
+.fact-item > * {
+  margin-bottom: 0.5em;
+}
+
+mat-card-title a {
+  color: #e4e4e4;
+}
+
+.home-image {
+  width: 100%;
+}
+
+mat-paginator {
+  background-color: transparent;
+  width: 100%;
+  color: #2e2c30;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  ::ng-deep .info-card {
+    height: fit-content;
+  }
+
+  .fact-item {
+    height: fit-content;
+  }
+
+  .fact-item p {
+    height: 30%;
+  }
+}

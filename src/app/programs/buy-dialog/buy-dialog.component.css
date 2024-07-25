@@ -1,0 +1,21 @@
+.buy-dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #e4e4e4;
+}
+
+.form-div {
+  margin-bottom: 10px;
+}
+
+.form-div button {
+  float: right;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  background-color: #efefef;
+}
+
+.form-div mat-form-field {
+  width: 100%;
+}

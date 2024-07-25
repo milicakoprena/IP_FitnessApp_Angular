@@ -1,0 +1,60 @@
+.excercises-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+mat-card-content {
+  margin-top: 15px;
+}
+
+.excercise-item {
+  background-color: #efefef;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0px 10px 15px 10px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.excercise-item p {
+  text-wrap: wrap;
+}
+
+.excercise-item .instructions {
+  flex-grow: 1;
+  overflow-y: auto;
+  text-align: justify;
+}
+
+.excercise-item p {
+  text-wrap: wrap;
+}
+
+.fact-item > * {
+  margin-bottom: 5px;
+}
+
+mat-card-title a {
+  color: #e4e4e4;
+}
+
+.home-image {
+  width: 100%;
+}
+
+mat-paginator {
+  background-color: transparent;
+  width: 100%;
+  color: #2e2c30;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .excercises-grid {
+    grid-template-columns: 1fr;
+  }
+}

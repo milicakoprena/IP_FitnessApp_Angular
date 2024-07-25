@@ -1,0 +1,43 @@
+mat-toolbar {
+  background-color: #715e89;
+  opacity: 80%;
+  color: #e7e7e7;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+mat-toolbar button {
+  color: #e7e7e7;
+  text-align: center;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  mat-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 5px;
+  }
+  mat-toolbar button {
+    text-align: center;
+    min-width: fit-content;
+  }
+
+  mat-toolbar-row {
+    gap: 10px;
+    overflow-x: scroll;
+  }
+
+  .fitness {
+    display: none;
+  }
+}

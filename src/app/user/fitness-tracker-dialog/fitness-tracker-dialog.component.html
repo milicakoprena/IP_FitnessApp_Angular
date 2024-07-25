@@ -1,0 +1,39 @@
+<div class="tracker-dialog">
+  <mat-dialog-content>
+    <div class="form-div">
+      <form class="tracker-form" [formGroup]="form" (ngSubmit)="submitForm()">
+        <mat-form-field appearance="fill">
+          <mat-label>Choose exercise type</mat-label>
+          <mat-select matInput formControlName="exerciseType" required>
+            <mat-option *ngFor="let item of exerciseTypes" [value]="item">{{
+              item
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Choose intensity</mat-label>
+          <mat-select matInput formControlName="intensity" required>
+            <mat-option *ngFor="let item of intensities" [value]="item">{{
+              item
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Enter weight</mat-label>
+          <input
+            type="number"
+            matInput
+            formControlName="weight"
+            required
+            step="0.1"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Enter duration (min)</mat-label>
+          <input type="number" matInput formControlName="duration" required />
+        </mat-form-field>
+        <button mat-button class="buy-button" type="submit">Add</button>
+      </form>
+    </div>
+  </mat-dialog-content>
+</div>

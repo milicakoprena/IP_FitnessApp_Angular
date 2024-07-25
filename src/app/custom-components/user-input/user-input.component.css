@@ -1,0 +1,153 @@
+.register-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: fit-content;
+  gap: 20px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form mat-form-field {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.mat-form-field .passwordButton {
+  width: 100%;
+  max-width: 450px;
+  margin-top: 10px;
+}
+
+.passwordButton {
+  background-color: whitesmoke;
+  height: 56px;
+  color: rgba(0, 0, 0, 0.87);
+  margin-bottom: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.passwordButton mat-icon {
+  margin-right: 8px;
+}
+
+.mat-icon {
+  color: #4a4a4a;
+}
+
+.avatar-container {
+  position: relative;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.box-shadow-avatar {
+  box-shadow: 0 10px 20px 20px #6c93001a;
+}
+
+.image-container {
+  height: 150px;
+  width: 150px;
+  z-index: 1;
+  border-radius: 50%;
+  background-color: #fff;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 10px 20px 20px #6c93001a;
+  margin-top: -40px;
+}
+
+.image-container.avatar-placeholder {
+  background-image: url("../../../assets/avatarplaceholder.png");
+}
+
+.icon-wrapper {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  padding: 0.35rem;
+  background-color: #2962ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  top: 75%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.icon-wrapper:hover {
+  transition: all 0.25s;
+  background-color: #1e40af;
+}
+
+.icon-wrapper .icon {
+  color: white;
+}
+
+.icon-wrapper label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-wrapper input[type="file"] {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .register-form {
+    max-width: 100%;
+    padding-top: 3%;
+  }
+  .form-inputs {
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+  }
+
+  .column {
+    width: 100%;
+  }
+
+  .register-form mat-form-field {
+    width: 100%;
+    margin-bottom: 0px;
+    font-size: small;
+    padding: 0;
+  }
+
+  .avatar-container {
+    width: 100%;
+  }
+
+  .image-container {
+    height: 90px;
+    width: 90px;
+    margin-bottom: 20px;
+  }
+
+  .icon-wrapper {
+    top: 70%;
+    height: 20px;
+    width: 20px;
+  }
+}

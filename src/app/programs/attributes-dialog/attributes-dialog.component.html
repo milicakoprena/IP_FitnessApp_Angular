@@ -1,0 +1,12 @@
+<div class="attributes-dialog">
+  <mat-dialog-content>
+    <div *ngFor="let attributeKey of data.attributesMap.keys()">
+      <mat-label>{{ attributeKey }}</mat-label>
+      <ul>
+        <li *ngFor="let attributeValue of data.attributesMap.get(attributeKey)">
+          {{ attributeValue }}
+        </li>
+      </ul>
+    </div>
+  </mat-dialog-content>
+</div>

@@ -1,0 +1,12 @@
+mat-dialog-content {
+  background-color: #efefef;
+}
+
+.video {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  flex-wrap: wrap;
+}

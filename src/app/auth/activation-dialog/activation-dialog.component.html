@@ -1,0 +1,15 @@
+<div class="activation-dialog">
+  <h2 mat-dialog-title>Activate your account</h2>
+  <mat-dialog-content>
+    <p>PIN has been sent to your e-mail. Please activate account.</p>
+    <mat-form-field>
+      <mat-label>Enter your pin.</mat-label>
+      <input matInput [(ngModel)]="data.pin" />
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="data.pin" cdkFocusInitial>Ok</button>
+  </mat-dialog-actions>
+</div>

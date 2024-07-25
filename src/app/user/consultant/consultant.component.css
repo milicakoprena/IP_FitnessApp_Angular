@@ -1,0 +1,49 @@
+.form-div {
+  padding: 20px;
+  background-color: #e4e4e4;
+  border-radius: 10px;
+}
+
+.form-div h3 {
+  color: #2e2c30;
+}
+
+.message-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+}
+
+.form-div button {
+  align-self: flex-end;
+  width: 20%;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  background-color: #efefef;
+  color: #2e2c30;
+}
+
+.form-div textarea {
+  resize: none;
+}
+
+.form-div mat-form-field {
+  width: 600px;
+}
+
+@media (max-width: 768px) {
+  .form-div {
+    align-items: center;
+    position: fixed;
+    top: 10%;
+    left: 23%;
+    width: 64%;
+    right: 2%;
+    height: fit-content;
+  }
+
+  .form-div mat-form-field {
+    width: 100%;
+    height: 60vh;
+  }
+}

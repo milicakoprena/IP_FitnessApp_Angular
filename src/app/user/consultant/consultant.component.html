@@ -1,0 +1,12 @@
+<div class="form-div">
+  <h3>Check the replies on your email.</h3>
+  <form class="message-form" [formGroup]="form" (ngSubmit)="submitForm()">
+    <mat-form-field appearance="fill">
+      <mat-label>Write a message</mat-label>
+      <textarea matInput formControlName="content" required rows="8"></textarea>
+    </mat-form-field>
+    <button mat-button class="message-button" type="submit" align="end">
+      Send
+    </button>
+  </form>
+</div>

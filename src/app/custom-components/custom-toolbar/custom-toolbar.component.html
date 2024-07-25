@@ -1,0 +1,15 @@
+<mat-toolbar>
+  <mat-toolbar-row id="custom-toolbar">
+    <span class="fitness">Fitness App</span>
+    <button
+      mat-button
+      [routerLink]="button.route"
+      *ngFor="let button of toolbarButtons"
+    >
+      {{ button.name }}
+    </button>
+    <button mat-button *ngIf="isAuthenticated" (click)="logout()">
+      Logout
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

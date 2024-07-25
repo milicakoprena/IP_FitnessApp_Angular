@@ -1,0 +1,26 @@
+<mat-drawer-container autosize>
+  <mat-drawer #drawer mode="side" opened>
+    <mat-nav-list>
+      <mat-list-item (click)="isExpanded = !isExpanded">
+        <mat-icon
+          mat-list-icon
+          class="chevron-button sidenav-button"
+          [ngClass]="{ rotated: isExpanded }"
+          >chevron_right</mat-icon
+        >
+      </mat-list-item>
+      <mat-list-item
+        *ngFor="let item of dashboardItems"
+        [routerLink]="item.route"
+      >
+        <mat-icon mat-list-icon>{{ item.icon }}</mat-icon>
+        <span class="slide-text" [class.expanded]="isExpanded">{{
+          item.name
+        }}</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content [@expandContent]="isExpanded ? 'expanded' : 'collapsed'">
+    <router-outlet> </router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

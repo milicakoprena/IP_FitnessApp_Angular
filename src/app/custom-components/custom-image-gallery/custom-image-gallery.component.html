@@ -1,0 +1,11 @@
+<mat-dialog-content>
+  <div class="gallery">
+    <button mat-button (click)="previousImage()">
+      <mat-icon> navigate_before</mat-icon>
+    </button>
+    <img [src]="data.images[currentImageIndex]" />
+    <button mat-button (click)="nextImage()">
+      <mat-icon> navigate_next</mat-icon>
+    </button>
+  </div>
+</mat-dialog-content>

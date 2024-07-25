@@ -1,0 +1,16 @@
+<div class="register-container">
+  <app-user-input (formSubmitted)="register($event)">
+    <button
+      mat-button
+      class="register-button"
+      [disabled]="!form || !form.valid"
+      type="submit"
+    >
+      Sign Up
+    </button>
+
+    <button mat-button routerLink="/auth/login">
+      Already have an account? Sign in here.
+    </button>
+  </app-user-input>
+</div>

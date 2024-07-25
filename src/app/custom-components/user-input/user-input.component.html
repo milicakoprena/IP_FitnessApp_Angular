@@ -1,0 +1,124 @@
+<form class="register-form" [formGroup]="form" (ngSubmit)="submitForm()">
+  <div class="form-inputs">
+    <div class="column">
+      <div class="avatar-container">
+        <div
+          class="image-container"
+          *ngIf="file && !resetAvatar; else placeholder"
+          [ngClass]="{ 'box-shadow-avatar': !!file }"
+          [ngStyle]="{ backgroundImage: 'url(' + file + ')' }"
+        ></div>
+
+        <ng-template #placeholder>
+          <div class="image-container avatar-placeholder"></div>
+        </ng-template>
+
+        <ng-template #useravatar>
+          <div
+            class="image-container user-avatar"
+            style="background-image: getUserAvatar()"
+          ></div>
+        </ng-template>
+
+        <label for="avatar-input-file">
+          <div class="icon-wrapper">
+            <input
+              type="file"
+              id="avatar-input-file"
+              accept="image/*"
+              formControlName="avatarFile"
+              (change)="onFileChange($event)"
+            />
+            <mat-icon class="icon" fontIcon="edit"></mat-icon>
+          </div>
+        </label>
+      </div>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter first name</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="firstName"
+          required
+          autocomplete="off"
+          placeholder=""
+        />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter last name</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="lastName"
+          required
+          autocomplete="off"
+          placeholder=""
+        />
+      </mat-form-field>
+    </div>
+    <div class="column">
+      <mat-form-field appearance="fill">
+        <mat-icon matPrefix>mail</mat-icon>
+        <mat-label>Enter mail address</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="mail"
+          required
+          autocomplete="off"
+          placeholder=""
+        />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-icon matPrefix>location_city</mat-icon>
+        <mat-label>Enter city</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="city"
+          required
+          autocomplete="off"
+          placeholder=""
+        />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter username</mat-label>
+        <mat-icon matPrefix>account_circle</mat-icon>
+        <input
+          matInput
+          type="text"
+          formControlName="username"
+          required
+          autocomplete="off"
+          placeholder=""
+        />
+      </mat-form-field>
+      <mat-form-field appearance="fill" *ngIf="!update">
+        <mat-label>Enter password</mat-label>
+        <mat-icon matPrefix>lock</mat-icon>
+        <input
+          matInput
+          type="{{ hidePassword ? 'password' : 'text' }}"
+          formControlName="password"
+          required
+          autocomplete="off"
+          placeholder=""
+        />
+        <mat-icon matSuffix (click)="togglePasswordVisibility()">
+          {{ hidePassword ? "visibility_off" : "visibility" }}</mat-icon
+        >
+      </mat-form-field>
+      <button
+        mat-button
+        type="button"
+        *ngIf="update"
+        class="passwordButton"
+        (click)="openPasswordDialog()"
+      >
+        <mat-icon>lock</mat-icon>
+        Change password
+      </button>
+    </div>
+  </div>
+  <ng-content></ng-content>
+</form>

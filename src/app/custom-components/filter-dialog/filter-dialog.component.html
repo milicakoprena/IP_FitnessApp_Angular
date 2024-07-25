@@ -1,0 +1,60 @@
+<mat-dialog-content>
+  <form [formGroup]="form" class="filter-form">
+    <mat-form-field appearance="fill">
+      <mat-label>Enter difficulty level</mat-label>
+      <mat-select formControlName="difficultyLevel">
+        <mat-option value="BEGINNER">Beginner</mat-option>
+        <mat-option value="INTERMEDIATE">Intermediate</mat-option>
+        <mat-option value="ADVANCED">Advanced</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter location</mat-label>
+      <mat-select formControlName="location">
+        <mat-option value="ONLINE">Online</mat-option>
+        <mat-option value="GYM">Gym</mat-option>
+        <mat-option value="PARK">Park</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter category</mat-label>
+      <mat-select
+        formControlName="category"
+        [(value)]="selectedCategory"
+        (selectionChange)="showAttributes()"
+      >
+        <mat-option *ngFor="let category of categories" [value]="category.id">{{
+          category.name
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Choose attributes</mat-label>
+      <mat-select
+        formControlName="attribute"
+        multiple
+        [(value)]="selectedAttribute"
+        (selectionChange)="showValues()"
+      >
+        <mat-option
+          *ngFor="let attribute of attributes"
+          [value]="attribute.id"
+          >{{ attribute.name }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Choose attribute values</mat-label>
+      <mat-select
+        formControlName="attributeValue"
+        multiple
+        [(value)]="selectedAttributeValues"
+      >
+        <mat-option *ngFor="let value of values" [value]="value.id">{{
+          value.value
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-button (click)="filter()" class="filter-button">Search</button>
+  </form>
+</mat-dialog-content>

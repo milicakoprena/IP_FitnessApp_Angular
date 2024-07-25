@@ -1,0 +1,29 @@
+<app-custom-card>
+  <mat-card-header>
+    <mat-card-title
+      ><a href="https://www.acefitness.org/resources/everyone/blog/fit-facts"
+        >ACE Fit Facts</a
+      ></mat-card-title
+    >
+  </mat-card-header>
+  <mat-card-content *ngIf="facts && facts.length > 0">
+    <div class="facts-grid">
+      <div class="fact" *ngFor="let item of pagedFacts">
+        <div class="fact-item">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+          <a mat-button [href]="item.link" color="primary">Read more</a>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+  <div class="card-border"></div>
+
+  <mat-paginator
+    [length]="length"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="onPageChange($event)"
+  >
+  </mat-paginator>
+</app-custom-card>

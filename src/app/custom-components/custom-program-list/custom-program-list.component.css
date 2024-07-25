@@ -1,0 +1,97 @@
+::ng-deep .info-card {
+  margin-top: 40px;
+}
+
+::ng-deep .main-content {
+  min-width: 1000px;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.program-item {
+  background-color: #efefef;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0 10px 15px 10px;
+  height: 170px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  cursor: pointer;
+}
+
+mat-paginator {
+  background-color: transparent;
+  width: 100%;
+  color: #2e2c30;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.program-image {
+  width: 45%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5%;
+}
+
+.program-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.buttons {
+  float: left;
+  margin-left: 5%;
+}
+
+.buttons button {
+  background-color: #efefef;
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  ::ng-deep .main-content {
+    min-width: 80%;
+  }
+
+  .programs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-item {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .program-image {
+    width: 30%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .program-item {
+    margin: 0 5px 10px 5px;
+  }
+
+  .program-image {
+    border-radius: 10px;
+  }
+}

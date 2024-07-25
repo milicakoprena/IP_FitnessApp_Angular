@@ -1,0 +1,84 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 400px;
+  flex: 1;
+}
+
+.tracker-card {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #e4e4e4;
+  color: #2e2c30;
+  height: max-content;
+}
+
+.tracker-card .tracker-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.tracker-item h2 {
+  margin-bottom: 25px;
+  text-decoration: underline;
+}
+
+mat-paginator {
+  background-color: #e4e4e4;
+  border-radius: 5px;
+  margin-bottom: -10px;
+  box-shadow: var(--mdc-elevated-card-container-elevation);
+}
+
+.add-button {
+  background-color: #e4e4e4;
+  color: #2e2c30;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+  box-shadow: var(--mdc-elevated-card-container-elevation);
+}
+.add-button:disabled {
+  background-color: #9b9b9b;
+  opacity: 80%;
+  cursor: not-allowed;
+}
+.chart-card {
+  flex: 1;
+}
+.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    position: fixed;
+    top: 10%;
+    left: 25%;
+    width: 73%;
+    overflow-y: scroll;
+    height: 89vh;
+    gap: 0px;
+  }
+  .column {
+    gap: 10px;
+  }
+
+  .pdf-button {
+    position: fixed;
+    bottom: 2%;
+    right: 3%;
+    background-color: #9b9b9b;
+  }
+}

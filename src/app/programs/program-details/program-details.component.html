@@ -1,0 +1,70 @@
+<app-custom-card>
+  <mat-card-header>
+    <mat-card-title>Workout program details</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row">
+      <div class="column">
+        <h2>{{ program?.title }}</h2>
+        <h3>{{ program?.description }}</h3>
+        <h3>Price: {{ program?.price }} BAM</h3>
+        <h3>Duration: {{ program?.duration }} days</h3>
+        <h3 class="category-p" (click)="showAttributes()">
+          Category: {{ program?.category }}
+        </h3>
+      </div>
+      <div class="column">
+        <h3>Difficulty level: {{ program?.difficultyLevel }}</h3>
+        <h3>Location: {{ program?.location }}</h3>
+
+        <h3>
+          Created by: {{ program?.userCreator?.firstName }}
+          {{ program?.userCreator?.lastName }}
+        </h3>
+        <h3>Instructors name: {{ program?.instructorName }}</h3>
+        <h3>Instructors contact: {{ program?.instructorContact }}</h3>
+      </div>
+
+      <div
+        class="column"
+        *ngIf="program && program.images && program.images.length > 0"
+      >
+        <div class="photo-album">
+          <img [src]="program.images[0]" />
+        </div>
+        <button mat-button (click)="showPhotoAlbum()">Show photo album</button>
+      </div>
+    </div>
+  </mat-card-content>
+</app-custom-card>
+<div class="program-buttons">
+  <button
+    mat-button
+    *ngIf="isProgramOnline() && userHasProgram && !program?.completed"
+    (click)="showVideo()"
+  >
+    <mat-icon>play_circle</mat-icon>
+    VIEW VIDEO
+  </button>
+  <button mat-button (click)="openCommentsDialog()" *ngIf="isLoggedIn">
+    <mat-icon>comment</mat-icon>
+    COMMENTS
+  </button>
+  <button
+    mat-button
+    (click)="openBuyDialog()"
+    class="button-buy"
+    *ngIf="isLoggedIn && !userHasProgram"
+  >
+    <mat-icon>paid</mat-icon>
+    BUY
+  </button>
+  <button
+    mat-button
+    *ngIf="isLoggedIn && userCreatedProgram"
+    (click)="deleteProgram()"
+  >
+    <mat-icon>delete</mat-icon>
+    DELETE
+  </button>
+</div>

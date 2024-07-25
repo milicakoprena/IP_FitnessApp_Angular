@@ -1,0 +1,25 @@
+<app-custom-card>
+  <mat-card-header>
+    <mat-card-title>Excercises</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="excercises-grid">
+      <div class="excercise" *ngFor="let item of pagedExcercises">
+        <div class="excercise-item">
+          <h2>{{ item.name }}</h2>
+          <p>LEVEL: {{ item.difficulty }}</p>
+          <p class="instructions">{{ item.instructions }}</p>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+  <div class="card-border"></div>
+
+  <mat-paginator
+    [length]="length"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="onPageChange($event)"
+  >
+  </mat-paginator>
+</app-custom-card>

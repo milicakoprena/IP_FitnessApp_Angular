@@ -1,0 +1,25 @@
+<div class="category-dialog">
+  <mat-dialog-content>
+    <p>Choose the category attributes and their values.</p>
+    <mat-form-field *ngFor="let attribute of attributes">
+      <mat-label>{{ attribute.name }}</mat-label>
+      <mat-select
+        multiple
+        [(ngModel)]="selectedAttributes"
+        (ngModelChange)="onValueChange($event, attribute.id)"
+      >
+        <mat-option
+          *ngFor="let attributeValue of attributeValuesMap.get(attribute.id)"
+          [value]="attributeValue.value"
+        >
+          {{ attributeValue.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button cdkFocusInitial (click)="onOkClick()">Ok</button>
+  </mat-dialog-actions>
+</div>

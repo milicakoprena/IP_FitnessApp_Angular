@@ -1,0 +1,33 @@
+::ng-deep .info-card {
+  width: 50% !important;
+}
+
+.list-div {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.list-div h3 {
+  color: #2e2c30;
+}
+
+.list-div button {
+  align-self: flex-end;
+  width: fit-content;
+  padding: 10px;
+  background-color: #efefef;
+  color: #2e2c30;
+}
+
+.mat-mdc-list-option.mat-accent {
+  --mdc-checkbox-selected-icon-color: #715e89;
+  --mdc-checkbox-selected-hover-icon-color: #c02482;
+}
+
+@media (max-width: 768px) {
+  ::ng-deep .info-card {
+    width: 90% !important;
+  }
+}

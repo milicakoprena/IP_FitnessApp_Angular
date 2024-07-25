@@ -1,0 +1,53 @@
+<mat-card class="login-card">
+  <mat-card-content>
+    <div class="login-container">
+      <div class="login-sub-container">
+        <img src="../../../assets/workouticon.png" />
+        <h2>Fitness Online App</h2>
+      </div>
+      <div class="login-sub-container">
+        <form [formGroup]="form" class="login-form">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter username</mat-label>
+            <mat-icon matPrefix> account_circle</mat-icon>
+            <input
+              matInput
+              type="text"
+              formControlName="username"
+              required
+              autocomplete="off"
+              placeholder=""
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Enter password</mat-label>
+            <mat-icon matPrefix> lock</mat-icon>
+            <input
+              matInput
+              type="{{ hidePassword ? 'password' : 'text' }}"
+              formControlName="password"
+              required
+              autocomplete="off"
+              placeholder=""
+            />
+            <mat-icon matSuffix (click)="togglePasswordVisibility()">
+              {{ hidePassword ? "visibility_off" : "visibility" }}</mat-icon
+            >
+          </mat-form-field>
+          <button
+            mat-button
+            [disabled]="form.invalid"
+            (click)="login()"
+            class="login-button"
+          >
+            Sign In
+          </button>
+          <button mat-button routerLink="/auth/register">
+            Don't have an account? Sign up here.
+          </button>
+        </form>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,13 @@
+.activation-dialog {
+  width: 400px;
+  padding: auto;
+}
+
+mat-dialog-content mat-form-field {
+  width: 90%;
+}
+
+mat-dialog-actions {
+  padding-bottom: 10px;
+  padding-right: 10px;
+}

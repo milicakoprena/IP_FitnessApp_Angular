@@ -1,0 +1,33 @@
+<div class="buy-dialog">
+  <mat-dialog-content>
+    <div class="form-div">
+      <form class="buy-form" [formGroup]="form" (ngSubmit)="submitForm()">
+        <mat-form-field appearance="fill">
+          <mat-label>Choose your payment method</mat-label>
+          <mat-select
+            matInput
+            formControlName="method"
+            required
+            [(value)]="selectedMethod"
+            (selectionChange)="setCardSelected()"
+          >
+            <mat-option value="Card">Card</mat-option>
+            <mat-option value="PayPal">PayPal</mat-option>
+            <mat-option value="In person">In person</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" *ngIf="cardSelected">
+          <mat-label>Enter your card number</mat-label>
+          <input
+            matInput
+            type="number"
+            pattern="^\d{16}$"
+            formControlName="card"
+            required
+          />
+        </mat-form-field>
+        <button mat-button class="buy-button" type="submit">Buy</button>
+      </form>
+    </div>
+  </mat-dialog-content>
+</div>
